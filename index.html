@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        margin: 0;
+      }
+      div{
+        margin: auto;
+        padding: 0;
+        text-align: center;
+        /*height: 80vh;*/
+        display: block;
+        width: 100vw;
+        aspect-ratio: 2.69/1;
+      }
+      img{
+        width: 100vw;
+        aspect-ratio: 2.69/1;
+        position:absolute; left:0; top:0;
+      }
+      .hidden{
+        display: none;
+      }
+      a:hover{
+        cursor:pointer;
+        background-color: grey;
+      }
+      svg:hover{
+        background-color: grey;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".Slides img:gt(0)").hide();
+      });
+      setInterval(function(){ 
+        $('.Slides :first-child').fadeOut().next('img').fadeIn().end().appendTo('.Slides')
+      },5000);
+    </script>
+  </head>
+  
+  <body>
+    <div class="Slides">
+      <img src="https://static.wixstatic.com/media/d672b9_5f0d36536c01476080e1ef80ffa1bf3b~mv2.png">
+      <img src="https://static.wixstatic.com/media/d672b9_5694a122c1aa48c0aa23fbe1e5f0a009~mv2.png">
+      <img src="https://static.wixstatic.com/media/d672b9_3601b21bae234e97b28bc59e321fce86~mv2.png">
+    </div>
+    <h1>My Title Here</h1>
+    <!-- Left -->
+    
+    <a onclick="btnPrev_Click()"><svg width="80px" height="80px" viewBox="0 0 24 24" fill="none"><path d="M14 16L10 12L14 8" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    
+    <!-- Right -->
+    
+    <a onclick="btnNext_Click()"><svg width="80px" height="80px" viewBox="0 0 24 24" fill="none"><path id="Vector" d="M10 8L14 12L10 16" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    
+  </body>
+</html>
